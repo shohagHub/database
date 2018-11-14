@@ -9,5 +9,87 @@ $ use database databasename
 $ show tables [will show the tables]
 
 
+For join test a database name join_test is created
+For inner join test two tables laptop and mobile
 
 
+
+
+
+For testing w3 schools queries creating the tables
+
+##############Customer Table################
+
+create table customers (
+  customerid int not null auto_increment,
+  custCustomerName varchar(255),
+  ContactName varchar(255),
+  address varchar(255),
+  city varchar(255),
+  postalcode varchar(200),
+  country varchar(255),
+  primary key (customerid)
+);
+insert into customers values(1,"Saleh Enam", "Shohag", 'dhaka', 'dhaka', '1205', 'Bangladesh');
+insert into customers values(2,"Saleh Enam", "Shohag", 'dhaka', 'dhaka', '1205', 'Bangladesh');
+insert into customers values(3,"C", "C", 'C', 'C', '1205', 'Bangladesh');
+insert into customers values(4,"D", "C", 'C', 'C', '1205', 'Bangladesh');
+insert into customers values(5,"E", "C", 'C', 'C', '1205', 'Bangladesh');
+
+
+
+Change a table column name after creating it(i.e custCustomerName-> customername)
+>alter table
+  customers change `custCustomerName` `customername` varchar(255);
+  
+  
+Order table
+  
+insert into orders values(1, 1, 1, '1996-07-04', 1);
+insert into orders values(2, 1, 1, '1996-07-04', 1);
+insert into orders values(3, 3, 1, '1996-07-04', 1);
+insert into orders values(4, 2, 1, '1996-07-04', 1);
+insert into orders values(5, 3, 1, '1996-07-04', 1);
+
+
+update query of order table
+
+update orders set shipperid=4 where orderid=3;
+update orders set shipperid=3 where orderid=2; 
+
+inner join query
+>select
+  orders.orderid,
+  customers.customerid
+from
+  orders
+  inner join customers on orders.customerid = customers.customerid;
+
+
+#########Shipper Table########
+create table shippers (shipperid int not null auto_increment, shippername varchar(255), 
+phone varchar(255), primary key(shipperid));
+
+
+
+insert into shippers values(1, "Speedy Express", '01911476899');
+insert into shippers values(2, "United Express", '01911476899');
+insert into shippers values(3, "Federal Express", '01911476899');
+insert into shippers values(4, "Lalmoni Express", '01911476899');
+
+
+
+inner join on customers, orders and shippers
+
+>select
+  orders.orderid,
+  customers.customerid,
+  shippers.shippername
+from
+  (
+    (
+      orders
+      inner join customers on customers.customerid = orders.orderid
+    )
+    inner join shippers on orders.shipperid = shippers.shipperid
+  );
