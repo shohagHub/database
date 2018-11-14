@@ -1,0 +1,13 @@
+mysql
+
+in command line paste it and enter "/Applications/MAMP/Library/bin/mysql -u root -p"
+enter password root
+$ Show database; command will show the available databases
+
+$ use database databasename
+
+$ show tables [will show the tables]
+
+
+
+
