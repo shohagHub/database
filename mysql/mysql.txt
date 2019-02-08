@@ -35,6 +35,15 @@ insert into customers values(2,"Saleh Enam", "Shohag", 'dhaka', 'dhaka', '1205',
 insert into customers values(3,"C", "C", 'C', 'C', '1205', 'Bangladesh');
 insert into customers values(4,"D", "C", 'C', 'C', '1205', 'Bangladesh');
 insert into customers values(5,"E", "C", 'C', 'C', '1205', 'Bangladesh');
+insert into customers values(6, "John", "Dae", 'C', 'C', '1205', 'America');
+insert into customers values(7, "Angelina", "Jolie", 'C', 'C', '5487', 'America');
+
+                      OR
+ INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+
+INSERT INTO Customers (CustomerName, City, Country)
+VALUES ('Tom', 'Hanks', 'Norway');
 
 
 
